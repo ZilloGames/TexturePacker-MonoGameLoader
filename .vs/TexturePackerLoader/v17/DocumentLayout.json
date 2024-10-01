@@ -1,0 +1,106 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Development\\Zillo Games\\TexturePacker-MonoGameLoader\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F326B59F-12D7-430B-A74F-418A967D079E}|TexturePackerLoader.csproj|d:\\development\\zillo games\\texturepacker-monogameloader\\spriteframe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F326B59F-12D7-430B-A74F-418A967D079E}|TexturePackerLoader.csproj|solutionrelative:spriteframe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F326B59F-12D7-430B-A74F-418A967D079E}|TexturePackerLoader.csproj|d:\\development\\zillo games\\texturepacker-monogameloader\\texturepackerloader.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{F326B59F-12D7-430B-A74F-418A967D079E}|TexturePackerLoader.csproj|solutionrelative:texturepackerloader.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SpriteFrame.cs",
+              "DocumentMoniker": "D:\\Development\\Zillo Games\\TexturePacker-MonoGameLoader\\SpriteFrame.cs",
+              "RelativeDocumentMoniker": "SpriteFrame.cs",
+              "ToolTip": "D:\\Development\\Zillo Games\\TexturePacker-MonoGameLoader\\SpriteFrame.cs",
+              "RelativeToolTip": "SpriteFrame.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-01T02:37:40.269Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TexturePackerLoader",
+              "DocumentMoniker": "D:\\Development\\Zillo Games\\TexturePacker-MonoGameLoader\\TexturePackerLoader.csproj",
+              "RelativeDocumentMoniker": "TexturePackerLoader.csproj",
+              "ToolTip": "D:\\Development\\Zillo Games\\TexturePacker-MonoGameLoader\\TexturePackerLoader.csproj",
+              "RelativeToolTip": "TexturePackerLoader.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-10-01T02:36:59.823Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{9d2016e5-735e-4d98-a9af-fff43b64a526}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:8:0:{dcc4ea97-1c0c-482b-b205-e541c0df9728}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{dcc4ea97-1c0c-482b-b205-e541c0df9728}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:4:0:{dcc4ea97-1c0c-482b-b205-e541c0df9728}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:5:0:{dcc4ea97-1c0c-482b-b205-e541c0df9728}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:6:0:{dcc4ea97-1c0c-482b-b205-e541c0df9728}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:7:0:{dcc4ea97-1c0c-482b-b205-e541c0df9728}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:3:0:{dcc4ea97-1c0c-482b-b205-e541c0df9728}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:8:0:{34c7837f-3b3a-449c-bdf0-bdad86cbaf4a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:6:0:{34c7837f-3b3a-449c-bdf0-bdad86cbaf4a}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

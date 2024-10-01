@@ -4,30 +4,43 @@ namespace TexturePackerLoader
 {
     public class SpriteSheet
     {
-        private readonly IDictionary<string, SpriteFrame> spriteList;
+        private readonly IDictionary<string, SpriteFrame> _spriteList;
 
         public SpriteSheet()
         {
-            spriteList = new Dictionary<string, SpriteFrame>();
+            _spriteList = new Dictionary<string, SpriteFrame>();
         }
 
         public void Add(string name, SpriteFrame sprite)
         {
-            spriteList.Add(name, sprite);
+            _spriteList.Add(name, sprite);
         }
 
         public void Add(SpriteSheet otherSheet)
         {
-            foreach (var sprite in otherSheet.spriteList)
+            foreach (var sprite in otherSheet._spriteList)
             {
-                spriteList.Add(sprite);
+                _spriteList.Add(sprite);
             }
         }
 
-        public SpriteFrame Sprite(string sprite)
+        public SpriteFrame GetSpriteFrame(string sprite)
         {
-            return spriteList[sprite];
+            return _spriteList[sprite];
         }
 
+        public List<string> GetAvailableSprites()
+        {
+            return _spriteList.Keys.ToList();
+        }
+
+        internal void Unload()
+        {
+            foreach(var sprite in _spriteList)
+            {
+                sprite.Value.Texture.Dispose();
+            }
+            _spriteList.Clear();
+        }
     }
 }

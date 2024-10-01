@@ -14,13 +14,15 @@ namespace TexturePackerLoader
 {
     public class SpriteSheetLoader
     {
-        private readonly ContentManager contentManager;
-        private readonly GraphicsDevice graphicsDevice;
+        private readonly ContentManager _contentManager;
+        private readonly GraphicsDevice _graphicsDevice;
+
+        private Dictionary<string, SpriteSheet> _spriteSheets = new Dictionary<string, SpriteSheet>();
 
         public SpriteSheetLoader(ContentManager contentManager, GraphicsDevice graphicsDevice)
         {
-            this.contentManager = contentManager;
-            this.graphicsDevice = graphicsDevice;
+            this._contentManager = contentManager;
+            this._graphicsDevice = graphicsDevice;
         }
 
         public SpriteSheet MultiLoad(string imageResourceFormat, int numSheets)
@@ -39,11 +41,16 @@ namespace TexturePackerLoader
 
         public SpriteSheet Load(string imageResource)
         {
-            var imageFile = Path.Combine(contentManager.RootDirectory, imageResource);
+            if (_spriteSheets.ContainsKey(imageResource))
+            {
+                return _spriteSheets[imageResource];
+            }
+
+            var imageFile = Path.Combine(_contentManager.RootDirectory, imageResource + ".png");
             var dataFile = Path.ChangeExtension(imageFile, "txt");
 
             FileStream fileStream = new FileStream(imageFile, FileMode.Open);
-            var texture = Texture2D.FromStream(graphicsDevice, fileStream);
+            var texture = Texture2D.FromStream(_graphicsDevice, fileStream);
             fileStream.Dispose();
 
 
@@ -80,7 +87,17 @@ namespace TexturePackerLoader
                 sheet.Add(name, sprite);
             }
 
+            _spriteSheets.Add(imageResource, sheet);
+
             return sheet;
+        }
+        public void Unload()
+        {
+            foreach (var sheet in _spriteSheets)
+            {
+                sheet.Value.Unload();
+            }
+            _spriteSheets.Clear();
         }
 
 #if NETFX_CORE
@@ -110,10 +127,13 @@ namespace TexturePackerLoader
 			}
 		}
 #else
-        private string[] ReadDataFile(string dataFile) 
+        private string[] ReadDataFile(string dataFile)
         {
             return File.ReadAllLines(dataFile);
         }
+
+      
 #endif
+
     }
 }
