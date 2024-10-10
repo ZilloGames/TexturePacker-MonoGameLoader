@@ -5,8 +5,10 @@ namespace TexturePackerLoader
 { 
     public class SpriteFrame
     {
-        public SpriteFrame(Texture2D texture, Rectangle sourceRect, Vector2 size, Vector2 pivotPoint, bool isRotated)
+        public SpriteFrame(Texture2D texture, Texture2D normalMap, Rectangle sourceRect, Vector2 size, Vector2 pivotPoint, bool isRotated)
         {
+
+            NormalMap = normalMap;
             this.Texture = texture;
             this.SourceRectangle = sourceRect;
             this.Size = size;
@@ -15,6 +17,8 @@ namespace TexturePackerLoader
             this.IsRotated = isRotated;
         }
 
+        public bool HasNormalMap => NormalMap != null;
+        public Texture2D NormalMap { get; }
         public Texture2D Texture { get; private set; }
 
         public Rectangle SourceRectangle { get; private set; }

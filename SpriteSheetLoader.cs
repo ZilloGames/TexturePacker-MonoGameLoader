@@ -25,18 +25,18 @@ namespace TexturePackerLoader
             this._graphicsDevice = graphicsDevice;
         }
 
-        public SpriteSheet MultiLoad(string imageResourceFormat, int numSheets)
-        {
-            SpriteSheet result = new SpriteSheet();
-            for (int i = 0; i < numSheets; i++)
-            {
-                string imageResource = string.Format(imageResourceFormat, i);
+        //public SpriteSheet MultiLoad(string imageResourceFormat, int numSheets)
+        //{
+        //    SpriteSheet result = new SpriteSheet();
+        //    for (int i = 0; i < numSheets; i++)
+        //    {
+        //        string imageResource = string.Format(imageResourceFormat, i);
 
-                SpriteSheet tmp = Load(imageResource);
-                result.Add(tmp);
-            }
-            return result;
-        }
+        //        SpriteSheet tmp = Load(imageResource);
+        //        result.Add(tmp);
+        //    }
+        //    return result;
+        //}
 
 
         public SpriteSheet Load(string imageResource)
@@ -48,10 +48,20 @@ namespace TexturePackerLoader
 
             var imageFile = Path.Combine(_contentManager.RootDirectory, imageResource + ".png");
             var dataFile = Path.ChangeExtension(imageFile, "txt");
+            var normalMapFile = Path.Combine(_contentManager.RootDirectory, imageResource + "_n.png");
 
             FileStream fileStream = new FileStream(imageFile, FileMode.Open);
             var texture = Texture2D.FromStream(_graphicsDevice, fileStream);
             fileStream.Dispose();
+
+            Texture2D normalMapTexture = null;
+
+            if(File.Exists(normalMapFile))
+            {
+                FileStream normalMapFileStream = new FileStream(normalMapFile, FileMode.Open);
+                normalMapTexture = Texture2D.FromStream(_graphicsDevice, normalMapFileStream);
+                normalMapFileStream.Dispose();
+            }
 
 
             var dataFileLines = ReadDataFile(dataFile);
@@ -82,7 +92,7 @@ namespace TexturePackerLoader
                 var pivotPoint = new Vector2(
                     float.Parse(cols[8], CultureInfo.InvariantCulture),
                     float.Parse(cols[9], CultureInfo.InvariantCulture));
-                var sprite = new SpriteFrame(texture, sourceRectangle, size, pivotPoint, isRotated);
+                var sprite = new SpriteFrame(texture, normalMapTexture, sourceRectangle, size, pivotPoint, isRotated);
 
                 sheet.Add(name, sprite);
             }
